@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educaser - Qui sommes-nous ?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+/* Hero Section */
+        .about-hero {
+           background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 61, 126, 0.9) 100%);
+
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+        
+        .about-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-hero-title {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-hero-subtitle {
+            font-size: var(--font-size-md);
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Vision Section */
+        .about-vision {
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .vision-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            position: relative;
+        }
+        
+        .vision-image {
+            
+      
+            display: flex;
+            flex-direction: column;
+           
+            justify-content: center;
+            
+            
+        }
+
+        .vision-image img  {
+
+            border-radius: 15px;
+
+        }
+        
+  
+        
+        .vision-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+        
+        .vision-points {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .vision-point {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+        
+        .vision-point i {
+            color: var(--primary);
+            font-size: var(--font-size-lg);
+            margin-top: 5px;
+        }
+        
+        /* Team Section */
+        .about-team {
+            background-color: var(--accent);
+            position: relative;
+           
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            
+        }
+        
+        .team-member {
+            background: var(--glass);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto var(--spacing-md);
+            background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .member-photo i {
+            font-size: 4rem;
+            color: var(--gray);
+        }
+        
+        .expertise-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .expertise-item {
+            background: rgba(79, 149, 157, 0.1);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 50px;
+            font-size: var(--font-size-sm);
+        }
+        
+        /* Centers Section */
+        .about-centers {
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .centers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .center-card {
+            background: var(--glass);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .center-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .center-image {
+            height: 250px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .center-image i {
+            font-size: 5rem;
+            color: var(--primary);
+        }
+        
+        .center-content {
+            padding: var(--spacing-lg);
+        }
+        
+        .center-features {
+            margin-top: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .center-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .center-feature i {
+            color: var(--primary);
+        }
+        
+        /* Values Section */
+        .about-values {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            position: relative;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .values-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .value-card {
+            background: var(--glass);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .value-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .value-icon {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--accent);
+        }
+        
+        /* Promise Section */
+        .about-promise {
+            background-color: var(--accent);
+            position: relative;
+        }
+        
+        .promise-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .promise-content {
+            background: var(--glass);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .promise-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.5s ease;
+        }
+        
+        .promise-content:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+        
+        /* Results Section */
+        .about-results {
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .result-card {
+            background: var(--glass);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .result-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .result-value {
+            font-size: var(--font-size-xxl);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* About Contact Section */
+        .about-contact {
+            background: linear-gradient(135deg, var(--secondary) 0%, #86bdaa 100%);
+            color: var(--dark);
+            position: relative;
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-lg);
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius-lg);
+            min-width: 250px;
+            transition: var(--transition);
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .contact-icon {
+            font-size: var(--font-size-xl);
+            background: var(--primary);
+            color: white;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+
+          .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        /* Responsive Design */
+      
+        
+        @media (max-width: 992px) {
+            .vision-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            .vision-image img {
+                order: -1;
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+          
+            
+        
+            .contact-methods {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+             .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+     
+ 
+       
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <header id="header"></header>
+
+    <div class="overlay" id="overlay"></div>
+
+
+  
+
+
+
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container about-hero-content">
+            <h1 class="about-hero-title">Qui sommes-nous ?</h1>
+            <p class="about-hero-subtitle">Une équipe engagée pour vous former à un métier porteur et utile</p>
+            <p>Chez ÉDUCASER, nous croyons en l'impact positif de la formation sur la vie des personnes. Depuis notre création, nous nous sommes donné une mission simple et puissante : rendre accessibles des formations de qualité, concrètes, professionnalisantes et 100 % finançables.</p>
+            <p style="margin-top: var(--spacing-md);">🎯 Que vous visiez le métier de moniteur auto-école ou celui de secrétaire auto-école, notre engagement reste le même : vous accompagner jusqu'à la réussite.</p>
+        </div>
+    </section>
+    
+    <!-- Vision Section -->
+    <section class="section about-vision">
+        <div class="container">
+            <div class="vision-container">
+                <div class="vision-content">
+                    <h2 class="section-title">Notre vision</h2>
+                    <p>Dans un monde en mouvement, les métiers de la conduite, de l'encadrement et de la gestion des auto-écoles sont plus essentiels que jamais. Nous formons celles et ceux qui transmettent la sécurité, la rigueur, l'autonomie… Et surtout, la confiance.</p>
+                    
+                    <div class="vision-points">
+                        <div class="vision-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Des formations centrées sur l'humain</span>
+                        </div>
+                        <div class="vision-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Une pédagogie active, pratique et bienveillante</span>
+                        </div>
+                        <div class="vision-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Une promesse : vous donner les moyens de changer de vie</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vision-image">
+                    <img src="media/formation.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="section about-team">
+        <h2 class="section-title">Notre équipe pédagogique</h2>
+        <p class="section-subtitle">Nos formateurs sont des professionnels expérimentés, passionnés par la transmission.
+ Ils cumulent des années d’expérience terrain dans :</p>
+        
+        <div class="container team-container">
+            <div class="team-grid">
+                <div class="value-card" style="background-color: var(--primary); color: #f0f0f0;">
+                    <div class="value-icon" style="color: var(--primary);">
+                        <i class="fas fa-car" style="background-color: #f0f0f0; border-radius: 50%; padding: 20px;"></i>
+                    </div>
+                    <h3>La conduite automobile et la sécurité routière</h3>
+                   
+                </div>
+                
+                 <div class="value-card" style="background-color: var(--primary); color: #f0f0f0;">
+                    <div class="value-icon" style="color: var(--primary);">
+                        <i class="fa-solid fa-file-circle-check" style="background-color: #f0f0f0; border-radius: 50%; padding: 20px;"></i> 
+                    </div>
+                    <h3>L’enseignement pédagogique adapté</h3>
+                   
+                </div>
+                
+                 <div class="value-card" style="background-color: var(--primary); color: #f0f0f0;">
+                    <div class="value-icon" style="color: var(--primary);">
+                        <i class="fa-solid fa-briefcase" style="background-color: #f0f0f0; border-radius: 50%; padding: 20px;"></i> 
+                    </div>
+                    <h3>La gestion administrative et les auto-écoles</h3>
+                   
+                </div>
+
+                <div class="value-card" style="background-color: var(--primary); color: #f0f0f0;">
+                    <div class="value-icon" style="color: var(--primary);">
+                        <i class="fa-solid fa-user-tie" style="background-color: #f0f0f0; border-radius: 50%; padding: 20px;"></i> 
+                    </div>
+                    <h3>L'accompagnement à l'emploi et la reconversion</h3>
+                   
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: var(--spacing-xl); background-color: #fff; border-radius: 20px; max-width: 600px; margin: 50px auto;">
+                <blockquote class="glass-card" style="padding: var(--spacing-lg); max-width: 800px; margin: 0 auto;">
+                    <p>"Ce qui nous anime, c'est de voir nos stagiaires réussir, évoluer, et retrouver du sens dans leur travail."</p>
+                    <p style="margin-top: var(--spacing-sm); font-style: italic;">- L'équipe ÉDUCASER</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Centers Section -->
+    <section class="section about-centers">
+        <h2 class="section-title">📍 Nos centres de formation</h2>
+        <p class="section-subtitle">Nous vous accueillons dans nos 3 centres modernes, accessibles et à taille humaine</p>
+        
+        <div class="container centers-container">
+            <div class="center-card glass-card">
+                <div class="center-image">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="center-content">
+                    <h3>Palaiseau (91)</h3>
+                    <p>Centre moderne avec toutes les commodités</p>
+                    <div class="center-features">
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Des salles équipées et conviviales</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Des simulateurs et véhicules récents</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Un accueil personnalisé</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Un encadrement de proximité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center-card glass-card">
+                <div class="center-image">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="center-content">
+                    <h3>Noisy-le-Sec (93)</h3>
+                    <p>Centre accessible avec transports en commun</p>
+                    <div class="center-features">
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Des salles équipées et conviviales</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Des simulateurs et véhicules récents</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Un accueil personnalisé</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Un encadrement de proximité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center-card glass-card">
+                <div class="center-image">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="center-content">
+                    <h3>Meaux (77)</h3>
+                    <p>Centre spacieux avec parking privé</p>
+                    <div class="center-features">
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Des salles équipées et conviviales</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Des simulateurs et véhicules récents</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Un accueil personnalisé</span>
+                        </div>
+                        <div class="center-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Un encadrement de proximité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Values Section -->
+    <section class="section about-values">
+        <h2 class="section-title" style="color: #f0f0f0;">Nos valeurs au quotidien</h2>
+        
+        <div class="container values-container">
+            <div class="values-grid">
+                <div class="value-card glass-card">
+                    <div class="value-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Accessibilité</h3>
+                    <p>Des formations ouvertes à tous, quels que soient votre parcours ou votre âge</p>
+                </div>
+                
+                <div class="value-card glass-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Engagement</h3>
+                    <p>Un accompagnement complet, de l'inscription jusqu'à l'insertion professionnelle</p>
+                </div>
+                
+                <div class="value-card glass-card">
+                    <div class="value-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Qualité</h3>
+                    <p>Un contenu certifié, mis à jour régulièrement, en lien direct avec les besoins du marché</p>
+                </div>
+                
+                <div class="value-card glass-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Confiance</h3>
+                    <p>Une relation transparente, humaine et basée sur la réussite individuelle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Promise Section -->
+    <section class="section about-promise">
+        <div class="container promise-container">
+            <h2 class="section-title">Notre promesse</h2>
+            <div class="promise-content glass-card">
+                <p>Vous ne serez jamais seul(e) dans votre parcours. Nous vous donnons les clés, les outils et le soutien pour réussir et vous épanouir dans un métier utile et recherché.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="section about-results">
+        <h2 class="section-title">📈 Des résultats concrets</h2>
+        
+        <div class="container results-container">
+            <div class="result-card glass-card">
+                <div class="result-value">+90%</div>
+                <p>de nos apprenants trouvent un emploi dans les 6 mois suivant leur formation</p>
+            </div>
+            
+            <div class="result-card glass-card">
+                <div class="result-value">+100</div>
+                <p>dossiers de financement accompagnés avec succès chaque mois</p>
+            </div>
+            
+            <div class="result-card glass-card">
+                <div class="result-value">4.9/5</div>
+                <p>notes de satisfaction élevées et des avis authentiques de stagiaires</p>
+            </div>
+        </div>
+        
+        <div class="text-center" style="margin-top: var(--spacing-xl);">
+            <a href="temoignage.html" class="btn btn-secondary">Lire leurs témoignages</a>
+        </div>
+    </section>
+    
+    <!-- About Contact Section -->
+    <section class="section about-contact">
+        <h2 class="section-title">📞 Envie d'en savoir plus ? Parlons-en.</h2>
+        <p class="section-subtitle" style="color: #f0f0f0;">Vous avez une question ? Un doute ? Un projet de reconversion ?</p>
+        
+        <div class="container contact-container">
+            <div class="contact-methods">
+                <div class="contact-method glass-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Par téléphone</h3>
+                    <p>01 69 09 27 27</p>
+                    <p>Lun-Ven, 9h-18h</p>
+                </div>
+                
+                <div class="contact-method glass-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Par email</h3>
+                    <p>contact@educaser.fr</p>
+                    <p>Réponse sous 24h</p>
+                </div>
+                
+                <div class="contact-method glass-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Rendez-vous</h3>
+                    <p>Dans nos centres</p>
+                    <p>Sur rendez-vous</p>
+                </div>
+            </div>
+            
+            <div class="cta-container" style="margin-top: var(--spacing-xl);">
+                <a href="contact.html#devis" class="btn btn-secondary btn-lg">Contacter notre équipe</a>
+                <a href="contact.html#devis" class="btn btn-primary btn-lg">Demander votre devis</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <footer id="footer"></footer>
+
+    <script>
+
+
+
+
+    </script>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

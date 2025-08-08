@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educaser - Formation Moniteur Auto-École</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Section */
+        .training-hero {
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 61, 126, 0.9) 100%);
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .training-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .training-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .training-hero-title {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .training-hero-subtitle {
+            font-size: var(--font-size-md);
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .training-hero-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .training-hero-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            background: rgba(255, 255, 255, 0.15);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        /* Future Career Section */
+        .future-career {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .future-career-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            position: relative;
+        }
+
+        .future-career-content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .future-career-image {
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .future-career-image img {
+            border-radius: var(--border-radius);
+        }
+
+        /* Objectives Section */
+        .training-objectives {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .training-objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 80px;
+        }
+
+        .training-objective-card {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            background: var(--glass);
+
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+        }
+
+
+
+        /* Skills Section */
+        .skills-section {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .skill-item {
+            background: var(--primary-gradient);
+            padding: 25px;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-item p {
+
+            color: aliceblue;
+            margin-top: 10px;
+            font-weight: 400;
+            line-height: 20px;
+
+        }
+
+        .skill-item i {
+
+            color: var(--accent);
+            font-size: 30px;
+            min-width: 24px;
+
+        }
+
+        /* Program Section */
+        .program-section {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .program-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .program-block {
+            
+              display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            background: var(--secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+        }
+
+        .program-block h3 {
+            color: var(--primary-gradient);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .program-img {
+
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .program-img img {
+            border-radius: var(--border-radius);
+        }
+
+
+        .icon-list1 i {
+            color: var(--primary);
+            font-size: var(--font-size-lg);
+            min-width: 30px;
+            margin-top: 3px;
+        }
+
+
+        /* Evaluation Section */
+        .evaluation-section {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .evaluation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .evaluation-card {
+            background: var(--light-gray);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            margin-top: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .evaluation-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .evaluation-card p {
+            margin-top: 15px;
+        }
+
+        .evaluation-card i {
+            font-size: var(--font-size-xl);
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        /* Careers Section */
+        .careers-section {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .career-card {
+            background: var(#fff);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+
+        }
+
+        .career-card:hover {
+            transform: translateY(-10px);
+
+        }
+
+        .career-card p {
+            margin-top: 15px;
+        }
+
+        .career-card i {
+            font-size: var(--font-size-xl);
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Salary Section */
+        .salary-section {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .salary-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .salary-card {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            margin: var(--spacing-lg) auto;
+            max-width: 600px;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+        }
+
+        .salary-card:hover {
+            transform: translateY(-10px)
+        }
+
+        .salary-card1 {
+            display: flex;
+            flex-direction: column;
+
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+
+            max-width: 600px;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+
+        }
+
+        .salary-value {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+        }
+
+        .salary-iconlist {
+            margin: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 15px;
+
+        }
+
+
+        .salary-iconlist i {
+            color: var(--secondary);
+            font-size: 25px;
+
+        }
+
+        /* Testimonials Section */
+        .training-testimonials {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .training-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .training-testimonial-card {
+            background: #fff;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            position: relative;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .training-testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .training-testimonial-card::before {
+            content: "“";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        /* Centers Section */
+        .training-centers {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .training-centers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .training-center-card {
+            background: var(--light-gray);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease;
+        }
+
+
+        .training-center-card:hover {
+            transform: translateY(-10px)
+        }
+
+        .training-center-card p {
+            margin-top: 10px;
+
+        }
+
+        /* Funding Section */
+        .training-funding {
+            background: var(--primary-gradient);
+            color: var(--white);
+            position: relative;
+        }
+
+        .training-funding-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .funding-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .funding-method {
+            background: rgba(255, 255, 255, 0.15);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Team Section */
+        .training-team {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .training-team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: 60px;
+        }
+
+        .training-team-member {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        /* Why Choose Section */
+        .why-choose-section {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .benefits-grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .benefits-grid1 {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+
+        }
+
+
+        .benefit-card {
+            background: var(--light-gray);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--spacing-sm);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Requirements Section */
+        .requirements-section {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .requirement-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            background: var(--primary);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+        }
+
+        .requirement-item i {
+            font-size: var(--font-size-lg);
+        }
+
+        .requirement-item:hover {
+            transform: translateY(-10px)
+        }
+
+        .requirement-item h3 {
+            text-align: center;
+            color: #f0f0f0;
+        }
+
+        .requirement-item p {
+            text-align: center;
+            color: #f0f0f0;
+        }
+
+
+        /* New Training Section */
+        .new-training-section {
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 61, 126, 0.9) 100%);
+            color: var(--white);
+            position: relative;
+        }
+
+        .new-training-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .new-training-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Outcomes Section */
+        .outcomes-section {
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: 30px;
+        }
+
+        .outcome-card {
+            background: var(--glass);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .training-contact {
+            background:  linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 61, 126, 0.9) 100%);;
+            color: var(--white);
+            position: relative;
+        }
+
+        .training-contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+
+
+        @media (max-width: 992px) {
+
+
+
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+
+            .overlay.active {
+                display: block;
+            }
+
+            .future-career-container,
+            .program-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .future-career-image,
+            .program-modules {
+                order: -1;
+            }
+
+            .program-modules {
+                grid-column: span 1;
+            }
+
+            .training-hero-title {
+                font-size: var(--font-size-xl);
+            }
+
+            .training-hero-subtitle {
+                font-size: var(--font-size-base);
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+
+            .training-hero {
+                padding: var(--spacing-xxl) 0;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .future-career-image img {
+                width: 100%;
+                height: auto;
+
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .program-img img {
+                width: 100%;
+                height: auto;
+            }
+
+           
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header id="header"></header>
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- Hero Section -->
+    <section class="training-hero">
+        <div class="container training-hero-content">
+            <h1 class="training-hero-title">Formation Moniteur Auto-École - Titre RNCP35329</h1>
+            <p class="training-hero-subtitle">Une carrière au cœur de la sécurité routière. Formez-vous à un métier
+                passionnant, recherché et humainement gratifiant.</p>
+
+            <div class="training-hero-features">
+                <div class="training-hero-feature">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Centres à Palaiseau, Noisy-le-Sec et Meaux</span>
+                </div>
+                <div class="training-hero-feature">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Sessions chaque mois</span>
+                </div>
+                <div class="training-hero-feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Eligible CPF / France Travail / OPCO / Transitions Pro</span>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <a href="contact.html#devis" class="btn btn-secondary btn-lg">Demandez votre devis gratuit</a>
+                <a href="contact.html#devis" class="btn btn-primary btn-lg">Vérifiez votre éligibilité</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Career Section -->
+    <section class="section future-career">
+        <div class="container">
+            <div class="future-career-container">
+                <div class="future-career-content">
+                    <h2 class="section-title" style="text-align: start;">Un métier d'avenir partout en France</h2>
+                    <p>Le métier de moniteur auto-école est en forte tension : les auto-écoles recrutent activement
+                        partout sur le territoire.</p>
+                    <p><strong> ✅ Mobilité, stabilité, utilité sociale, autonomie… </strong></p>
+                    <p>C'est un métier clé dans la transmission des valeurs de sécurité routière.</p>
+                </div>
+                <div class="future-career-image">
+                    <img src="media/métier.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="section training-objectives">
+        <h2 class="section-title">Objectifs de la formation Moniteur Auto-École</h2>
+        <p class="section-subtitle">Notre formation vise à vous préparer au Titre Professionnel "Enseignant de la
+            Conduite et de la Sécurité Routière" – RNCP 35329</p>
+
+        <div class="container">
+            <div class="training-objectives-grid">
+
+
+                <div class="training-objective-card">
+                    <div class="future-career-image">
+
+                        <img src="media/auto-ecole-métier.jpg" alt="">
+
+
+                    </div>
+
+                </div>
+
+                <div class="training-objective-card">
+                    <h3>Vous apprendrez à :</h3>
+                    <ul class="icon-list">
+                        <li>
+                            <i class="fas fa-car"></i>
+                            <span>Former à la conduite en toute sécurité</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-chalkboard"></i>
+                            <span>Animer des séances de code de la route</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Accompagner et évaluer les apprentis conducteurs</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-road"></i>
+                            <span>Participer à des actions d'éducation routière</span>
+                        </li>
+                    </ul>
+
+                    <div>
+
+                        <h3 style="margin-top: 30px;">Diplôme délivré :</h3>
+                        <p>Titre professionnel – Niveau 5 (Bac +2)</p>
+                        <p>📍 Formation certifiée & reconnue par l'État</p>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section">
+        <h2 class="section-title">Compétences et activités visées</h2>
+        <p class="section-subtitle">À l'issue de la formation, vous serez capable de :</p>
+
+        <div class="container">
+            <div class="skills-list">
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Concevoir et animer des séquences pédagogiques</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Enseigner la conduite pratique (voiture) et théorique (code)</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Adapter votre enseignement aux profils des élèves</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Encadrer les parcours de formation en auto-école</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Promouvoir les comportements responsables sur la route</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="section program-section">
+        <h2 class="section-title">Programme de la formation</h2>
+        <p class="section-subtitle">Le programme est structuré autour de 2 blocs de compétences</p>
+
+        <div class="container">
+            <div class="program-container">
+                <div class="program-block">
+                    <h3><i class="fas fa-car"></i> Bloc 1 : Formation à la conduite</h3>
+                    <ul class="icon-list1">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Préparation des séances de conduite</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Animation et gestion pédagogique en véhicule</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Suivi individuel des élèves</span>
+                        </li>
+                    </ul>
+
+                    <h3 style="margin-top: 50px;"><i class="fas fa-shield-alt"></i> Bloc 2 : Formation à la sécurité
+                        routière</h3>
+                    <ul class="icon-list1">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Cours théoriques (code de la route)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Animation en salle ou à distance</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Préparation à l'examen du permis</span>
+                        </li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">Modules transversaux :</h3>
+                    <ul class="icon-list1">
+                        <li>
+                            <i class="fas fa-users"></i>
+                            <span>Communication & gestion de groupe</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-briefcase"></i>
+                            <span>Accompagnement à l'insertion professionnelle</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-file-alt"></i>
+                            <span>Préparation à l'épreuve du Titre RNCP</span>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="program-img">
+                    <img src="media/formation-conduite.jpg" alt="">
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- Evaluation Section -->
+    <section class="section evaluation-section">
+        <h2 class="section-title">Modalités d'évaluation</h2>
+
+        <div class="container">
+            <div class="evaluation-grid">
+                <div class="evaluation-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Évaluations continues</h3>
+                    <p>Évaluations continues en centre de formation</p>
+                </div>
+                <div class="evaluation-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Mises en situation</h3>
+                    <p>Mises en situation pédagogique</p>
+                </div>
+
+                <div class="evaluation-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Épreuves finales</h3>
+                    <p>Épreuves finales devant un jury professionnel</p>
+                </div>
+
+                <div class="evaluation-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Validation par blocs</h3>
+                    <p>Validation par blocs de compétences</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--spacing-xl);">
+                <p class="section-subtitle">L'obtention du Titre RNCP35329 permet un accès direct à l'emploi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section class="section careers-section">
+        <h2 class="section-title">Débouchés professionnels</h2>
+        <p class="section-subtitle">Une fois diplômé(e), vous pouvez exercer comme :</p>
+
+        <div class="container">
+            <div class="careers-grid">
+                <div class="career-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Moniteur / Monitrice auto-école</h3>
+                    <p>Salarié ou indépendant</p>
+                </div>
+
+                <div class="career-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Enseignant de la conduite</h3>
+                    <p>Spécialiste sécurité routière</p>
+                </div>
+
+                <div class="career-card">
+                    <i class="fas fa-motorcycle"></i>
+                    <h3>Formateur BSR, moto, poids lourd</h3>
+                    <p>Avec spécialisation</p>
+                </div>
+
+                <div class="career-card">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Coordinateur pédagogique</h3>
+                    <p>Ou responsable de centre de formation</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--spacing-xl);">
+                <p class="section-subtitle">Un métier polyvalent, évolutif et durable !</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salary Section -->
+    <section class="section salary-section">
+        <h2 class="section-title">Carrière & rémunération</h2>
+
+        <div class="container">
+            <div class="salary-container">
+                <div class="salary-card">
+                    <div class="salary-value">2 000 € à 2 600 € net/mois</div>
+                    <p>Salaire moyen dès les premiers mois</p>
+                </div>
+
+                <ul class="salary-iconlist" style="max-width: 600px; margin: 0 auto;">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Opportunités dans les centres urbains, périurbains ou ruraux</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line"></i>
+                        <span>Possibilités d'évolution : formateur expert, chef de centre, auto-école
+                            indépendante</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section training-testimonials">
+        <h2 class="section-title">Témoignages d'anciens élèves</h2>
+
+        <div class="container">
+            <div class="training-testimonials-grid">
+                <div class="training-testimonial-card">
+                    <p class="testimonial-text">"Une formation très complète. L'accompagnement est top du début à la
+                        fin. J'ai trouvé un emploi dès la fin de la formation !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <span class="author-name">Amine</span>
+                            <span>Diplômé à Palaiseau</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="training-testimonial-card">
+                    <p class="testimonial-text">"Une reconversion réussie ! J'ai adoré l'approche pédagogique et
+                        l'équipe."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <span class="author-name">Céline</span>
+                            <span>Diplômée à Noisy-le-Sec</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--spacing-xl);">
+                <a href="temoignage.html" class="btn btn-secondary">Voir plus d'avis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centers Section -->
+    <section class="section training-centers">
+        <h2 class="section-title">Nos centres de formation</h2>
+        <p class="section-subtitle">Nos formations sont dispensées dans 3 centres accessibles</p>
+
+        <div class="container">
+            <div class="training-centers-grid">
+                <div class="training-center-card" style="background: var(--primary); color: #fff;">
+                    <h3>Palaiseau (91)</h3>
+                    <p style="color: #fff;">Centre moderne avec simulateurs de conduite</p>
+                    <p style="color: #fff;">Accès facile par RER B</p>
+                </div>
+
+                <div class="training-center-card" style="background: var(--accent);">
+                    <h3>Noisy-le-Sec (93)</h3>
+                    <p>Installations récentes avec parking d'entraînement</p>
+                    <p>Proche de la gare RER E</p>
+                </div>
+
+                <div class="training-center-card" style="background: var(--secondary);">
+                    <h3>Meaux (77)</h3>
+                    <p>Grand centre avec plusieurs véhicules d'apprentissage</p>
+                    <p>Parking privé pour les élèves</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--spacing-xl);">
+
+                <p>🚉 Proximité des transports | ♿ Accessibilité PMR | 🕐 Accueil du lundi au vendredi</p>
+                <p>📅 Entrées permanentes – Prochaine session sous 30 jours !</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funding Section -->
+    <section class="section training-funding">
+        <h2 class="section-title" style="color: #fff;">Financement 100% possible</h2>
+        <p class="section-subtitle" style="color: var(--accent);">Bonne nouvelle : vous n'aurez rien à payer si vous
+            êtes éligible</p>
+
+        <div class="container">
+            <div class="training-funding-content">
+                <p>Nous vous accompagnons gratuitement pour activer votre :</p>
+
+                <div class="funding-methods">
+                    <div class="funding-method">Compte Personnel de Formation (CPF)</div>
+                    <div class="funding-method">Aide de France Travail</div>
+                    <div class="funding-method">Financement OPCO (salariés)</div>
+                    <div class="funding-method">Transition Pro (reconversion)</div>
+                </div>
+
+                <p>Contactez-nous au <strong>01 69 09 27 27</strong> pour un accompagnement complet.</p>
+
+                <div style="margin-top: var(--spacing-lg);">
+                    <a href="contact.html#devis" class="btn btn-primary btn-lg">Estimer mon financement</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section training-team">
+        <h2 class="section-title">Une équipe engagée pour votre réussite</h2>
+
+        <div class="container">
+            <div class="training-team-grid">
+                <div class="training-team-member">
+                    <h3 style="text-align: start;">Nos formateurs sont :</h3>
+                    <ul class="icon-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Des professionnels de la conduite</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Pédagogues passionnés</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Disponibles et bienveillants</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expérimentés dans l'accompagnement à la réussite</span>
+                        </li>
+                    </ul>
+
+                    <div class="salary-card1" style="margin-top: var(--spacing-md); ">
+                        <div class="salary-value" style="font-size: var(--font-size-md);">Taux de réussite et taux
+                            d'insertion élevés</div>
+                    </div>
+                </div>
+
+                <div class="training-team-member">
+                    <div class="future-career-image" style="height: 100%;">
+                        <img src="media/equipe-formateurs.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section why-choose-section">
+        <h2 class="section-title">Pourquoi choisir notre centre de formation ?</h2>
+
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3>Formation 100% financée</h3>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Centres bien situés</h3>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Suivi personnalisé</h3>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Formateurs expérimentés</h3>
+                </div>
+
+            </div>
+
+            <div class="benefits-grid1">
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Démarrage rapide</h3>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Insertion professionnelle facilitée</h3>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Accompagnement de A à Z</h3>
+                </div>
+            </div>
+
+
+
+            <div class="text-center" style="margin-top: var(--spacing-xl);">
+                <h3 class="section-subtitle">🎯 Rejoignez une formation humaine, utile et concrète !</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="section requirements-section">
+        <h2 class="section-title">Conditions d'accès</h2>
+
+        <div class="container">
+            <div class="requirements-grid">
+                <div class="requirement-item">
+                    <div class="benefit-icon" style="color:var(--accent);">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Permis B valide depuis au moins 2 ans</h3>
+                </div>
+
+                <div class="requirement-item">
+                    <div class="benefit-icon" style="color:var(--accent);">
+                        <i class="fas fa-graduation-cap"></i>
+
+                    </div>
+
+                    <h3>Niveau BAC recommandé</h3>
+                </div>
+
+                <div class="requirement-item">
+                    <div class="benefit-icon" style="color:var(--accent);">
+                        <i class="fas fa-comments"></i>
+
+
+                    </div>
+
+                    <h3>Bon relationnel et sens de la pédagogie</h3>
+                </div>
+
+                <div class="requirement-item">
+                    <div class="benefit-icon" style="color:var(--accent);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+
+                    <h3>Avoir envie de transmettre</h3>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--spacing-xl);">
+                <h3 class="section-subtitle">📌 Admission sur entretien de motivation</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Training Section -->
+    <section class="section new-training-section">
+        <div class="container">
+            <div class="new-training-content">
+                <h2 class="section-title" style="color: #e0e0e0;">NOUVEAU : Formation Secrétaire Auto-École</h2>
+                <div class="icon-list"
+                    style="justify-content: center; flex-direction: row; flex-wrap: wrap; gap: var(--spacing-xl); margin: var(--spacing-lg) 0;">
+                    <div class="training-hero-feature">
+                        <i class="fas fa-certificate"></i>
+                        <span>Niveau Bac</span>
+                    </div>
+                    <div class="training-hero-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Durée courte</span>
+                    </div>
+                    <div class="training-hero-feature">
+                        <i class="fas fa-percent"></i>
+                        <span>100% financée</span>
+                    </div>
+                    <div class="training-hero-feature">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Postes à pourvoir dans toute la France</span>
+                    </div>
+                </div>
+
+                <a href="contact.html#devis" class="btn btn-primary btn-lg">Découvrir cette formation complémentaire</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section class="section outcomes-section">
+        <h2 class="section-title">Ce que vous obtenez à la fin de la formation</h2>
+
+        <div class="container">
+            <div class="outcomes-grid">
+                <div class="requirement-item">
+                    <div class="benefit-icon" style="color: var(--accent);">
+                    <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Un diplôme reconnu par l'État</h3>
+                    <p>Titre RNCP35329</p>
+                </div>
+
+                <div class="requirement-item">
+                    <div class="benefit-icon" style="color: var(--accent);">
+                    <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Une certification professionnelle</h3>
+                    <p>Valorise votre expertise</p>
+                </div>
+
+                <div class="requirement-item">
+                    <div class="benefit-icon" style="color: var(--accent);">
+                    <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Une réelle opportunité d'emploi</h3>
+                    <p>Accès direct au marché du travail</p>
+                </div>
+
+                <div class="requirement-item">
+                    <div class="benefit-icon" style="color: var(--accent);">
+                    <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Une transformation de vie professionnelle</h3>
+                    <p>Carrière épanouissante</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section training-contact">
+        <div class="container">
+            <div class="training-contact-content">
+                <h2 class="section-title" style="color: #f0f0f0;">Appelez-nous ou écrivez-nous dès maintenant</h2>
+
+                <div style="margin: var(--spacing-lg) 0;">
+                    <p style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md);">
+                        <i class="fas fa-phone"></i> 01 69 09 27 27
+                    </p>
+                    <p style="font-size: var(--font-size-xl);">
+                        <i class="fas fa-envelope"></i> contact@educaser.fr
+                    </p>
+                </div>
+
+                <h3>Lancez votre avenir aujourd'hui !</h3>
+
+                <div class="cta-container" style="margin-top: var(--spacing-xl);">
+                    <a href="contact.html#devis" class="btn btn-secondary btn-lg">Je demande à être rappelé</a>
+                    <a href="contact.html#devis" class="btn btn-primary btn-lg">Je veux m'inscrire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer"></footer>
+
+    <script>
+
+
+
+
+    </script>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

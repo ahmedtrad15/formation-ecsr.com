@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educaser - Témoignages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Section */
+        .testimonials-hero {
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 61, 126, 0.9) 100%);
+            background-size: cover;
+            background-position: center;
+            color: var(--dark);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+
+        .testimonials-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonials-hero-title {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.1;
+        }
+
+        .testimonials-hero-subtitle {
+            font-size: var(--font-size-md);
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Testimonial Categories */
+        .testimonial-categories {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: 50px;
+            background: var(--light-gray);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary-gradient);
+            color: var(--white);
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            max-width: 1400px;
+            margin:40px auto;
+            
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-header {
+            padding: var(--spacing-lg);
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: bold;
+            font-size: var(--font-size-xl);
+        }
+
+        .testimonial-author-info {
+            flex: 1;
+        }
+
+        .testimonial-author-name {
+            font-weight: 700;
+            font-size: var(--font-size-md);
+        }
+
+        .testimonial-meta {
+            font-size: var(--font-size-sm);
+            opacity: 0.9;
+        }
+
+        .testimonial-content {
+            padding: var(--spacing-lg);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            padding-left: var(--spacing-md);
+        }
+
+        .testimonial-quote::before {
+            content: "''";
+            position: absolute;
+            left: -5px;
+            top: -20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-highlights {
+            background: rgba(152, 210, 192, 0.1);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-md);
+            border-left: 3px solid var(--secondary);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .highlight-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-item i {
+            color: var(--primary);
+        }
+
+        /* Call to Action Section */
+        .testimonials-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, #e4e7c0 100%);
+            padding: var(--spacing-xxl) 0;
+            position: relative;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            
+           
+        }
+
+        .cta-btnn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cta-content {
+            background: var(--glass);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .cta-content:hover::before {
+            width: 100%;
+            opacity: 0.4;
+        }
+
+        /* Share Your Story Section */
+        .share-story {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: var(--spacing-xxl) 0;
+            position: relative;
+        }
+
+        .share-container {
+            max-width: 800px;
+            margin: 0 auto;
+            
+        }
+
+        .share-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            max-width: 600px;
+            margin: var(--spacing-xl) auto 0;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--spacing-xs);
+        }
+
+        .form-group label {
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--light-gray);
+            font-family: 'Poppins', sans-serif;
+            font-size: var(--font-size-base);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(152, 210, 192, 0.3);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            :root {
+                --font-size-xxl: 3rem;
+                --font-size-xl: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .testimonials-container {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --font-size-xxl: 2.5rem;
+                --font-size-xl: 1.75rem;
+                --spacing-xxl: 4rem;
+            }
+
+            .testimonial-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            :root {
+                --font-size-xxl: 2rem;
+                --font-size-xl: 1.5rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header id="header"></header>
+
+    <div class="overlay" id="overlay"></div>
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="testimonials-hero">
+        <div class="container testimonials-hero-content">
+            <h1 class="testimonials-hero-title" style="color: #fff;">Témoignages de nos apprenants</h1>
+            <p class="testimonials-hero-subtitle" style="color: #fff;">Ils ont changé de vie. Pourquoi pas vous ?</p>
+            <p style="color: #fff;">Chez ÉDUCASER, chaque apprenant est bien plus qu'un simple stagiaire : c'est une personne avec un projet,
+                une ambition, une envie de réussir. Qu'ils viennent de l'intérim, du commerce, de l'enseignement ou d'un
+                tout autre domaine, ils ont choisi de faire confiance à notre équipe pour se former à un métier
+                d'avenir.</p>
+            <p style="margin-top: var(--spacing-md); font-weight: 500; color: #fff;">🎯 Découvrez leurs retours d'expérience et
+                laissez-vous inspirer.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <h2 class="section-title">Témoignages – Formation Moniteur Auto-École</h2>
+
+        
+
+        <div class="testimonials-container">
+            <!-- Sofiane -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">S</div>
+                    <div class="testimonial-author-info">
+                        <div class="testimonial-author-name">Sofiane - 34 ans</div>
+                        <div class="testimonial-meta">Ancien chauffeur VTC | Centre de Noisy-le-Sec (93)</div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <p class="testimonial-quote">"Je voulais sortir de la précarité du transport à la demande et me
+                        stabiliser. La formation de moniteur auto-école m'a permis de retrouver un vrai cadre de travail
+                        et de transmettre. L'équipe d'Éducaser a été très présente, surtout dans la préparation à
+                        l'examen. Aujourd'hui, je travaille dans une auto-école à Saint-Denis."</p>
+                    <div class="testimonial-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Formation 100 % prise en charge</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Insertion pro en moins de 2 mois</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Laura -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">L</div>
+                    <div class="testimonial-author-info">
+                        <div class="testimonial-author-name">Laura - 28 ans</div>
+                        <div class="testimonial-meta">Ancienne enseignante contractuelle | Centre de Palaiseau (91)
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <p class="testimonial-quote">"J'avais besoin de retrouver du sens dans mon métier, de renouer avec
+                        l'humain. Le métier de monitrice m'a séduite. La formation est exigeante, mais passionnante.
+                        Mention spéciale aux formateurs, patients et passionnés. Je me sens enfin à ma place."</p>
+                    <div class="testimonial-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Repositionnement professionnel réussi</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Formation achevée en 7 mois</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Julien -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">J</div>
+                    <div class="testimonial-author-info">
+                        <div class="testimonial-author-name">Julien - 45 ans</div>
+                        <div class="testimonial-meta">En reconversion après un licenciement | Centre de Meaux (77)</div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <p class="testimonial-quote">"J'étais commercial depuis 20 ans. À 45 ans, changer de métier faisait
+                        peur. Mais je ne regrette rien. La pédagogie, les outils, l'encadrement : tout est fait pour
+                        réussir. Aujourd'hui, je suis embauché dans une auto-école qui valorise mon expérience et mes
+                        qualités humaines."</p>
+                    <div class="testimonial-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Reconversion validée</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>CDI à la clé</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section 2 -->
+    <section class="section" style="background-color: var(--light-gray);">
+        <h2 class="section-title">Témoignages – Formation Secrétaire Auto-École</h2>
+
+        <div class="testimonials-container">
+            <!-- Nawal -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">N</div>
+                    <div class="testimonial-author-info">
+                        <div class="testimonial-author-name">Nawal - 29 ans</div>
+                        <div class="testimonial-meta">Mère de 2 enfants, en reprise d'activité | Centre de Meaux (77)
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <p class="testimonial-quote">"Je cherchais un métier stable, accessible avec un Bac, et avec du
+                        contact. J'ai adoré cette formation : pratique, bien rythmée, et très concrète. J'ai été
+                        recrutée par une auto-école dès la fin. Je suis fière de mon parcours."</p>
+                    <div class="testimonial-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100 % financée via France Travail</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Reprise d'activité en douceur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lucas -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">L</div>
+                    <div class="testimonial-author-info">
+                        <div class="testimonial-author-name">Lucas - 32 ans</div>
+                        <div class="testimonial-meta">Ancien réceptionniste | Centre de Noisy-le-Sec (93)</div>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <p class="testimonial-quote">"Le secteur auto-école, je ne connaissais pas du tout. Mais en
+                        découvrant le métier de secrétaire auto-école, j'ai tout de suite accroché. Aujourd'hui, je gère
+                        les dossiers, les plannings, je fais le lien avec les élèves... et je m'y sens bien. C'est un
+                        vrai poste polyvalent."</p>
+                    <div class="testimonial-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Formation courte</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Recruté dès la fin de la formation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="testimonials-cta">
+        <div class="container cta-container">
+            <div class="cta-content">
+                <h2 class="section-title">Et vous ?</h2>
+                <p class="section-subtitle">Et si votre parcours était le prochain témoignage sur cette page ?</p>
+                <p style="text-align: center;">Vous aussi, faites le choix d'un métier porteur, humain et durable.</p>
+                <div class="contact-info" style="justify-content: center; margin: var(--spacing-md) 0;">
+                    <div style="margin: 0 var(--spacing-md);">
+                        <i class="fas fa-phone"></i> 01 69 09 27 27
+                    </div>
+                    <div style="margin: 0 var(--spacing-md);">
+                        <i class="fas fa-envelope"></i> contact@educaser.fr
+                    </div>
+                </div>
+                
+            </div>
+            <div class="cta-btnn">
+                <a href="contact.html#devis" class="btn btn-secondary btn-lg" >Je demande un devis gratuit</a>
+                </div>
+        </div>
+    
+    </section>
+
+    <!-- Share Your Story Section -->
+    <section class="share-story">
+        <div class="container share-container">
+            <h2 class="section-title" style="color: var(--white);">Vous souhaitez témoigner ?</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Vous êtes un ancien stagiaire de chez
+                ÉDUCASER ? Vous avez trouvé un emploi ou vécu une belle transformation personnelle grâce à la formation
+                ?</p>
+            <p style="margin-bottom: var(--spacing-lg); color: rgba(255, 255, 255, 0.9); text-align: center;">Votre expérience peut
+                inspirer d'autres personnes à franchir le pas.</p>
+
+            <form class="share-form" action="https://formsubmit.co/ahmed.trad15@gmail.com" method="submit">
+                <div class="form-group">
+                    <label for="name">Votre nom</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Votre email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="formation">Formation suivie</label>
+                    <select id="formation" class="form-control" required>
+                        <option value="">Sélectionnez une formation</option>
+                        <option value="moniteur">Moniteur Auto-École</option>
+                        <option value="secretaire">Secrétaire Auto-École</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre témoignage</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">Envoyer mon témoignage</button>
+            </form>
+
+            <p style="margin-top: var(--spacing-md); opacity: 0.8;">👉 Vous pouvez aussi nous envoyer votre témoignage
+                par e-mail : <a href="mailto:contact@educaser.fr"
+                    style="color: var(--accent); font-weight: 600;">contact@educaser.fr</a></p>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer id="footer"></footer>
+
+    <script>
+
+
+
+
+    </script>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

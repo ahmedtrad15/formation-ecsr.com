@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci !</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+  
+        /* Thank You Content */
+        .thank-you-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .thank-you-icon {
+            font-size: 6rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-lg);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .thank-you-title {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary);
+        }
+        
+        .thank-you-subtitle {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-xl);
+            color: var(--dark);
+        }
+        
+        .thank-you-text {
+            font-size: var(--font-size-md);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.8;
+        }
+        
+        .next-steps {
+            background: rgba(152, 210, 192, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: var(--spacing-md);
+            border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+            text-align: left;
+            margin-bottom: var(--spacing-xl);
+            width: 100%;
+        }
+        
+        .next-steps h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary);
+        }
+        
+        .next-steps ul {
+            padding-left: var(--spacing-md);
+        }
+        
+        .next-steps li {
+            margin-bottom: var(--spacing-xs);
+        }
+    
+     
+    </style>
+</head>
+
+<body>
+
+
+    <header id="header"></header>
+
+    <div class="overlay" id="overlay"></div>
+
+
+<!-- Thank You Content -->
+    <main class="thank-you-container">
+        <div class="thank-you-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        
+        <h1 class="thank-you-title">Merci !</h1>
+        
+        <p class="thank-you-subtitle">Votre demande a bien été envoyée</p>
+        
+        <p class="thank-you-text">
+            Nous avons bien reçu votre demande et vous remercions pour votre confiance.<br>
+            Un membre de notre équipe prendra contact avec vous dans les plus brefs délais.
+        </p>
+        
+        <div class="next-steps">
+            <h3>Prochaines étapes :</h3>
+            <ul>
+                <li>Un conseiller vous contactera sous 24 heures ouvrables</li>
+                <li>Préparez les documents nécessaires pour votre formation</li>
+                <li>Visitez notre site pour découvrir les témoignages de nos anciens élèves</li>
+            </ul>
+        </div>
+        
+       
+
+    
+
+    <script>
+
+
+    </script>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

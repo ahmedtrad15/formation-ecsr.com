@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educaser - FAQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+
+        /* Hero Section */
+        .faq-hero {
+                background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 61, 126, 0.9) 100%);
+            background-size: cover;
+            background-position: center;
+            color: var(--dark);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+        
+        .faq-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .faq-hero-title {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.1;
+        }
+        
+        .faq-hero-subtitle {
+            font-size: var(--font-size-md);
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+        }
+
+        .faq-hero p {
+            color: #fff;
+        }
+        
+        /* FAQ Categories */
+
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .faq-section-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .faq-section-title i {
+            font-size: var(--font-size-xl);
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-question {
+            padding: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            cursor: pointer;
+            background: rgba(152, 210, 192, 0.1);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 var(--spacing-md);
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-answer-content {
+            padding: var(--spacing-md);
+            padding-top: 20px;
+
+        }
+        
+        .faq-highlight {
+            background: rgba(152, 210, 192, 0.1);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            margin: var(--spacing-sm) 0;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .highlight-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight-item i {
+            color: var(--primary);
+            margin-top: 5px;
+        }
+        
+        .faq-cta {
+            margin-top: var(--spacing-md);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        /* Call to Action Section */
+        .faq-cta-section {
+            background: linear-gradient(135deg, var(--accent) 0%, #e4e7c0 100%);
+            padding: var(--spacing-xxl) 0;
+            position: relative;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .cta-content {
+            background: var(--glass);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.5s ease;
+        }
+        
+    
+        /* Responsive Design */
+      
+        @media (max-width: 768px) {
+            :root {
+                --font-size-xxl: 2.5rem;
+                --font-size-xl: 1.75rem;
+                --spacing-xxl: 4rem;
+            }
+        }
+        
+     
+    </style>
+</head>
+
+<body>
+
+
+    <header id="header"></header>
+
+    <div class="overlay" id="overlay"></div>
+
+
+<!-- Hero Section -->
+    <section class="faq-hero">
+        <div class="container faq-hero-content">
+            <h1 class="faq-hero-title" style="color: #fff;">❓ Foire Aux Questions (FAQ)</h1>
+            <p class="faq-hero-subtitle">Vous avez des questions ? Nous y répondons ici !</p>
+            <p style="margin-bottom: 40px;">Avant de vous lancer dans une formation, il est normal d'avoir des doutes. Nous avons regroupé ici les questions les plus fréquentes posées par nos futurs apprenants concernant la formation de moniteur auto-école (RNCP35329) et la formation secrétaire auto-école.</p>
+           
+            <a href="contact.html#devis" class="btn btn-secondary">Demandez à être rappelé gratuitement</a>
+        </div>
+    </section>
+    
+    <!-- FAQ Categories -->
+    <section class="section">
+       
+        <div class="container faq-container">
+            <!-- Formation Moniteur Auto-École -->
+            <div class="faq-section">
+                <h2 class="faq-section-title">
+                    <i class="fas fa-car"></i>
+                    <span>🔸 Formation Moniteur Auto-École</span>
+                </h2>
+                
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>1. Quels sont les prérequis pour suivre la formation ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Pour intégrer la formation de moniteur auto-école, vous devez :</p>
+                            <div class="faq-highlight">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Avoir au minimum 20 ans</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Être titulaire du permis B depuis plus de 2 ans</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Avoir un niveau bac ou équivalent</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Ne pas faire l'objet d'une annulation de permis</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Avoir une bonne aisance relationnelle</span>
+                                </div>
+                            </div>
+                            <p>🎯 Notre équipe peut vous accompagner pour évaluer votre admissibilité.</p>
+                            <div class="faq-cta">
+                                <a href="contact.html#devis" class="btn btn-primary">Vérifier mon éligibilité maintenant</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>2. La formation est-elle reconnue officiellement ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Oui, il s'agit d'un titre professionnel inscrit au RNCP (n° 35329), reconnu par l'État. Cette certification vous permet d'exercer légalement le métier d'enseignant de la conduite en France.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>3. Combien de temps dure la formation ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>La formation dure en moyenne 7 à 9 mois et se compose de :</p>
+                            <ul style="list-style-type: disc; padding-left: var(--spacing-lg); margin: var(--spacing-sm) 0;">
+                                <li>Cours théoriques en centre</li>
+                                <li>Simulations pédagogiques</li>
+                                <li>Stages pratiques en auto-école</li>
+                            </ul>
+                            <p>Des rentrées ont lieu toute l'année.</p>
+                            <div class="faq-cta">
+                                <a href="contact.html#devis" class="btn btn-primary">Consulter les prochaines sessions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>4. Quels sont les débouchés après la formation ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>La formation ouvre la porte à plusieurs opportunités :</p>
+                            <ul style="list-style-type: disc; padding-left: var(--spacing-lg); margin: var(--spacing-sm) 0;">
+                                <li>Moniteur indépendant ou salarié en auto-école</li>
+                                <li>Responsable pédagogique</li>
+                                <li>Création ou reprise d'une auto-école</li>
+                            </ul>
+                            <p>💡 Le secteur est en forte tension partout en France, vous aurez de réelles opportunités d'emploi rapidement après obtention du titre.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>5. La formation est-elle vraiment 100 % financée ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Oui ! Grâce à nos partenariats et dispositifs, la formation peut être entièrement prise en charge par :</p>
+                            <ul style="list-style-type: disc; padding-left: var(--spacing-lg); margin: var(--spacing-sm) 0;">
+                                <li>France Travail</li>
+                                <li>CPF</li>
+                                <li>Transitions Pro</li>
+                                <li>Régions ou OPCO (salariés)</li>
+                            </ul>
+                            <p>Nous vous accompagnons étape par étape dans le montage de votre dossier.</p>
+                            <div class="faq-cta">
+                                <a href="contact.html#devis" class="btn btn-primary">Demandez votre étude de financement gratuite</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formation Secrétaire Auto-École -->
+            <div class="faq-section">
+                <h2 class="faq-section-title">
+                    <i class="fas fa-desktop"></i>
+                    <span>🔸 Formation Secrétaire Auto-École</span>
+                </h2>
+                
+                <!-- Question 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>6. À qui s'adresse cette formation ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Cette formation s'adresse à toute personne :</p>
+                            <div class="faq-highlight">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Titulaire d'un niveau bac minimum</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>À la recherche d'un métier stable et polyvalent</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Avec un bon relationnel et un sens de l'organisation</span>
+                                </div>
+                            </div>
+                            <p>Elle est idéale pour les personnes en reconversion, retour à l'emploi ou en recherche de stabilité.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 7 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>7. Quels types de tâches vais-je apprendre ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Vous apprendrez à :</p>
+                            <ul style="list-style-type: disc; padding-left: var(--spacing-lg); margin: var(--spacing-sm) 0;">
+                                <li>Gérer les inscriptions, les plannings et les dossiers administratifs</li>
+                                <li>Accueillir les élèves et les orienter</li>
+                                <li>Utiliser les logiciels spécifiques aux auto-écoles</li>
+                                <li>Suivre la relation avec les préfectures</li>
+                            </ul>
+                            <p>C'est un métier essentiel au bon fonctionnement d'une auto-école.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 8 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>8. Peut-on suivre la formation en parallèle d'un emploi ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Oui, nous proposons des formats adaptés à différents rythmes, selon votre situation :</p>
+                            <ul style="list-style-type: disc; padding-left: var(--spacing-lg); margin: var(--spacing-sm) 0;">
+                                <li>Temps plein</li>
+                                <li>Parcours aménagé</li>
+                                <li>Horaires flexibles pour les parents ou salariés</li>
+                            </ul>
+                            <div class="faq-cta">
+                                <a href="contact.html#devis" class="btn btn-primary">Contactez-nous pour étudier votre emploi du temps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Questions générales -->
+            <div class="faq-section">
+                <h2 class="faq-section-title">
+                    <i class="fas fa-question-circle"></i>
+                    <span>🔸 Questions générales</span>
+                </h2>
+                
+                <!-- Question 9 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>9. Dans quels centres peut-on suivre la formation ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Nous disposons de 3 centres de formation en Île-de-France :</p>
+                            <ul style="list-style-type: none; padding-left: 0; margin: var(--spacing-sm) 0;">
+                                <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Palaiseau (91)</li>
+                                <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Noisy-le-Sec (93)</li>
+                                <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Meaux (77)</li>
+                            </ul>
+                            <p>Tous sont facilement accessibles en transport ou en voiture.</p>
+                            <div class="faq-cta">
+                                <a href="centres.html" class="btn btn-primary">Découvrir nos centres</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 10 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>10. Comment s'inscrire ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>C'est très simple :</p>
+                            <ol style="padding-left: var(--spacing-lg); margin: var(--spacing-sm) 0;">
+                                <li>Complétez notre formulaire de contact ou de pré-inscription</li>
+                                <li>Nous vous rappelons sous 24h</li>
+                                <li>Un conseiller vous accompagne dans la constitution de votre dossier</li>
+                            </ol>
+                            <p>📞 Appelez-nous directement au 01 69 09 27 27</p>
+                            <p>📧 Ou envoyez-nous un message à <a href="mailto:contact@educaser.fr" style="color: var(--primary); font-weight: 600;">contact@educaser.fr</a></p>
+                            <div class="faq-cta">
+                                <a href="contact.html#devis" class="btn btn-primary">Je m'inscris maintenant</a>
+                                <a href="contact.html#devis" class="btn btn-secondary">Je demande un devis gratuit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section class="faq-cta-section">
+        <div class="container cta-container">
+            <div class="cta-content">
+                <h2 class="section-title">Vous avez d'autres questions ?</h2>
+                <p class="section-subtitle">Notre équipe est là pour vous aider à chaque étape de votre parcours.</p>
+                <div class="faq-cta" style="justify-content: center; margin-top: var(--spacing-lg);">
+                    <a href="contact.html#devis" class="btn btn-secondary btn-lg">Je discute avec un conseiller</a>
+                    <a href="contact.html#devis" class="btn btn-primary btn-lg">Je planifie un rendez-vous personnalisé</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+
+
+    <footer id="footer"></footer>
+
+    <script>
+
+ // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    // Toggle the active class
+                    question.parentElement.classList.toggle('active');
+                    
+                    if (question.parentElement.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        answer.style.maxHeight = '0';
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                    
+                    // Close other open questions
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question) {
+                            const otherAnswer = otherQuestion.nextElementSibling;
+                            const otherIcon = otherQuestion.querySelector('i');
+                            if (otherQuestion.parentElement.classList.contains('active')) {
+                                otherQuestion.parentElement.classList.remove('active');
+                                otherAnswer.style.maxHeight = '0';
+                                otherIcon.classList.remove('fa-chevron-up');
+                                otherIcon.classList.add('fa-chevron-down');
+                            }
+                        }
+                    });
+                });
+            });
+
+
+    </script>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

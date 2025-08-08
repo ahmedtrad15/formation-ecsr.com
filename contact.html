@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educaser - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+ /* Hero Section */
+        .contact-hero {
+                background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 61, 126, 0.9) 100%);
+ 
+            color: var(--white);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+        
+        .contact-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-hero-title {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.1;
+        }
+        
+        .contact-hero-subtitle {
+            font-size: var(--font-size-md);
+            margin-bottom: var(--spacing-lg);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Contact Info */
+        .contact-info-section {
+            background: var(--light);
+        }
+        
+        .contact-info-container {
+           display: flex;
+           flex-direction: column;
+            gap: var(--spacing-xl);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .contact-details h3 {
+            margin-bottom: var(--spacing-lg);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .contact-item i {
+            font-size: var(--font-size-lg);
+            color: var(--primary);
+            min-width: 30px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        
+        .centers-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .center-item {
+            padding: var(--spacing-sm);
+            border-left: 3px solid var(--secondary);
+            background: rgba(152, 210, 192, 0.1);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        /* Forms */
+        .contact-form-container {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .form-tabs {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        
+        .form-tab {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: 50px;
+            background: var(--light-gray);
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: none;
+        }
+        
+        .form-tab:hover {
+            background: var(--primary-gradient);
+            color: var(--white);
+            transform : translateY(-10px);
+        }
+
+        .form-tab.active {
+            background: var(--primary-gradient);
+            color: var(--white);
+           
+        }
+        
+        .form-panel {
+            display: none;
+        }
+
+        .form-panel h4 {
+            color: var(--primary-dark);
+            padding-bottom: 20px;
+            font-size: 17px;
+        }
+        
+        .form-panel.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--light-gray);
+            font-family: 'Poppins', sans-serif;
+            font-size: var(--font-size-base);
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(152, 210, 192, 0.3);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .checkbox-group input {
+            margin-top: 5px;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        /* Benefits Section */
+        .contact-benefits {
+            background: var(--accent);
+            position: relative;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        }
+        
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: var(--font-size-xl);
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Centers Section */
+        .contact-centers {
+            background: var(--light);
+        }
+        
+        .centers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .center-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .center-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .center-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            color: var(--primary);
+        }
+        
+        .center-address {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-md);
+            border-left: 2px solid var(--secondary);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            
+            padding: var(--spacing-xl) 0;
+        }
+
+        .panel-btn {
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-info-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --font-size-xxl: 2.5rem;
+                --font-size-xl: 1.75rem;
+                --spacing-xxl: 4rem;
+            }
+            
+            .benefits-container, .centers-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            :root {
+                --font-size-xxl: 2rem;
+                --font-size-xl: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .form-tabs {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+       
+        
+     
+    </style>
+</head>
+
+<body>
+
+
+    <header id="header"></header>
+
+    <div class="overlay" id="overlay"></div>
+
+
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container contact-hero-content">
+            <h1 class="contact-hero-title">Contactez-nous</h1>
+            <p class="contact-hero-subtitle">Un projet de formation ? Une question ? Envie de changer de voie ? Parlons-en.</p>
+            <p>Notre équipe est là pour vous écouter, vous conseiller et vous accompagner à chaque étape de votre projet de formation.</p>
+            <p>Que vous souhaitiez devenir moniteur auto-école (RNCP35329) ou que vous envisagiez la formation de secrétaire auto-école, nous répondons à toutes vos questions avec sérieux, bienveillance et réactivité.</p>
+        </div>
+    </section>
+    
+    <!-- Contact Info Section -->
+    <section class="section contact-info-section">
+        <div class="container contact-info-container">
+         
+            <div class="contact-form-container">
+                <h3 class="section-title">Formulaire de contact</h3>
+                <p class="section-subtitle">Un conseiller vous rappelle sous 24h ouvrées !</p>
+                
+                <div class="form-tabs">
+                    
+                    <button class="form-tab active" id="inscription" data-tab="inscription">Inscription</button>
+                    <button class="form-tab" id="devis" data-tab="devis">Devis</button>
+                    <button class="form-tab" data-tab="rappel">Rappel</button>
+                </div>
+                
+                
+                <!-- Inscription Form -->
+                <div class="form-panel active" id="inscription-panel">
+                     <form action="https://formsubmit.co/ahmed.trad15@gmail.com" method="POST">
+                        <input type="text" name="_honey" style="display:none">
+                         <input type="hidden" name="_captcha" value="false">
+                         <input type="hidden" name="_template" value="table">
+                        <h4>🔐 Vos informations personnelles</h4>
+                        
+                        <div class="form-group">
+                            <label for="nom-ins">Nom *</label>
+                            <input type="text" name="Nom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prenom-ins">Prénom *</label>
+                            <input type="text" name="Prénom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="naissance">Date de naissance *</label>
+                            <input type="date" name="Date_de_naissance" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tel-ins">Téléphone *</label>
+                            <input type="tel" name="Téléphone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email-ins">Email *</label>
+                            <input type="email" name="Email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Adresse postale complète</label>
+                            <textarea id="adresse" name="Adresse" class="form-control"></textarea>
+                        </div>
+                        
+                        <h4>🎓 Formation souhaitée</h4>
+                        
+                        <div class="form-group">
+                            <label>Je souhaite m'inscrire à : *</label>
+                            <div class="checkbox-group">
+                                <input type="radio"  name="formation" required>
+                                <label>Formation Moniteur Auto-École (Titre RNCP 35329, Bac +2)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="radio"  name="formation" required>
+                                <label>Formation Secrétaire Auto-École (Niveau Bac)</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Avez-vous déjà le permis B ? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="permis-oui" name="Permis" required>
+                                    <label for="permis-oui">Oui</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="permis-non" name="Permis" required>
+                                    <label for="permis-non">Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Si oui, depuis combien d'années ?</label>
+                            <input type="number" name="annees-permis" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Quel est votre niveau d'études actuel ? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio"  name="niveau" required>
+                                    <label>Inférieur au bac</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio"  name="niveau" required>
+                                    <label>Bac</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio"  name="niveau" required>
+                                    <label>Bac +2 ou plus</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>📍 Centre de formation souhaité</h4>
+                        
+                        <div class="form-group">
+                            <label>Je souhaite suivre ma formation à : *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio"  name="centre" required>
+                                    <label>Palaiseau (91)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio"  name="centre" required>
+                                    <label>Noisy-le-Sec (93)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio"  name="centre" required>
+                                    <label>Meaux (77)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio"  name="centre" required>
+                                    <label>Peu importe / à définir avec le conseiller</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>💼 Situation professionnelle</h4>
+                        
+                        <div class="form-group">
+                            <label>Quel est votre statut actuel ? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="statut1" name="statut" required>
+                                    <label for="statut1">Demandeur d'emploi</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="statut2" name="statut" required>
+                                    <label for="statut2">Salarié(e)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="statut3" name="statut" required>
+                                    <label for="statut3">Étudiant(e)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="statut4" name="statut" required>
+                                    <label for="statut4">En reconversion</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="statut5" name="statut" required>
+                                    <label for="statut5">Autre</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Bénéficiez-vous d'un financement ou d'un accompagnement ?</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="finance1" name="Financement">
+                                <label for="finance1">CPF</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="finance2" name="Financement">
+                                <label for="finance2">France Travail</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="finance3" name="Financement">
+                                <label for="finance3">OPCO / Transition Pro</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="finance4" name="Financement">
+                                <label for="finance4">Aucun pour l'instant</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message-ins">✉️ Message ou précision (facultatif)</label>
+                            <textarea id="message-ins" name="Message" class="form-control" placeholder="Ex. : Je suis disponible uniquement le week-end / Je veux commencer dès que possible / Besoin d'aménagements spécifiques..."></textarea>
+                        </div>
+                        
+                        <h4>✅ Déclaration</h4>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="declaration1" required>
+                            <label for="declaration1">Je certifie l'exactitude des informations fournies et accepte d'être contacté(e) par un conseiller formation.</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="declaration2">
+                            <label for="declaration2">Je souhaite recevoir des informations utiles sur la formation et les modalités de financement par e-mail.</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-secondary btn-lg" style="margin-top: 30px;">Envoyer mon inscription</button>
+                        
+                        <p class="section-subtitle" style="margin-top: var(--spacing-xl);">
+                            🔔 Après validation : Un membre de notre équipe vous contactera sous 24h ouvrées pour :
+                            Confirmer votre dossier, Planifier un entretien d'orientation, Monter votre dossier de financement 100% pris en charge
+                        </p>
+                    </form>
+                </div>
+                
+                <!-- Devis Form -->
+                <div class="form-panel" id="devis-panel">
+                      <form action="https://formsubmit.co/ahmed.trad15@gmail.com" method="POST">
+                        <input type="text" name="_honey" style="display:none">
+                         <input type="hidden" name="_captcha" value="false">
+                         <input type="hidden" name="_template" value="table">
+                        <h4>📄 Demande de devis personnalisé</h4>
+                        <p>Obtenez votre devis gratuit et sans engagement</p>
+                        <p style="margin-bottom: 20px;">Remplissez ce formulaire, un conseiller vous contactera sous 24h pour vous accompagner dans votre projet de formation, entièrement financée.</p>
+                        
+                        
+                        <div class="form-group">
+                            <label>Nom *</label>
+                            <input type="text" name="Nom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Prénom *</label>
+                            <input type="text" name="Prénom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Téléphone *</label>
+                            <input type="tel" name="Téléphone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email-devis">Email *</label>
+                            <input type="email" name="Email" class="form-control" required>
+                        </div>
+                     
+                        <div class="form-group">
+                            <label>Formation souhaitée *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="formation-devis1" name="formation" required>
+                                    <label for="formation-devis1">Formation Moniteur Auto-École (Titre RNCP 35329)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="formation-devis2" name="formation" required>
+                                    <label for="formation-devis2">Formation Secrétaire Auto-École (Niveau Bac)</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Centre de formation préféré</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" name="centre-devis">
+                                    <label>Palaiseau (91)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" name="centre-devis">
+                                    <label>Noisy-le-Sec (93)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" i name="centre-devis">
+                                    <label>Meaux (77)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="centre-devis4" name="centre-devis">
+                                    <label for="centre-devis4">Indifférent / À définir avec un conseiller</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date-debut">Date souhaitée de début</label>
+                            <input type="date" id="date-debut" name="date_souhaitée" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="info-compl">Informations complémentaires (facultatif)</label>
+                            <textarea id="info-compl" class="form-control" name="date_souhaitée" placeholder="Exemple : Informations sur le financement, disponibilité, questions spécifiques..."></textarea>
+                        </div>
+                        
+                   
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent1" required>
+                            <label for="consent1">Je consens à ce que mes données soient utilisées pour traiter ma demande de devis conformément à la politique de confidentialité.</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent2">
+                            <label for="consent2">Je souhaite recevoir des informations commerciales et des offres promotionnelles par e-mail.</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-secondary btn-lg" style="margin-top: 30px;" >Obtenir mon devis gratuit</button>
+                        
+                        <p class="section-subtitle" style="margin-top: var(--spacing-xl);">
+                            📞 Pour toute question urgente, contactez-nous au 01 69 09 27 27 ou par e-mail à contact@educaser.fr
+                        </p>
+                    </form>
+                </div>
+                
+                <!-- Rappel Form -->
+                <div class="form-panel" id="rappel-panel">
+                    <form action="https://formsubmit.co/ahmed.trad15@gmail.com" method="POST">
+                        <input type="text" name="_honey" style="display:none">
+                         <input type="hidden" name="_captcha" value="false">
+                         <input type="hidden" name="_template" value="table">
+                      
+                        <h4>📞 Demandez à être rappelé(e)</h4>
+                        <p>Vous souhaitez être contacté(e) rapidement par un conseiller ?</p>
+                        <p>Laissez-nous vos coordonnées, nous vous rappelons sous 24h, sans engagement.</p>
+                        
+                        <h5>Vos informations</h5>
+                        <div class="form-group">
+                            <label>Nom *</label>
+                            <input type="text" name="Nom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Prénom *</label>
+                            <input type="text" name="Prénom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Téléphone *</label>
+                            <input type="tel"  name="Téléphone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="Email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Sujet de votre demande (facultatif)</label>
+                            <textarea  class="form-control" name="Sujet_de_demande" placeholder="Exemple : Informations sur la formation moniteur auto-école, financement, inscription…"></textarea>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox"  required>
+                            <label>J'accepte que mes données soient utilisées pour me contacter conformément à la politique de confidentialité.</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-secondary btn-lg" style="margin-top: 30px;">Je demande un rappel</button>
+                        
+                        <p class="section-subtitle" style="margin-top: var(--spacing-xl);">
+                            📞 Pour une réponse immédiate, appelez-nous au 01 69 09 27 27
+                            <br>✉️ Ou écrivez à contact@educaser.fr
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="section contact-benefits">
+        <h2 class="section-title">📣 Pourquoi nous contacter ?</h2>
+        
+        <div class="container benefits-container">
+            <div class="benefit-card">
+                <div class="benefit-icon">✅</div>
+                <h3>Être rappelé(e) rapidement</h3>
+                <p>Un conseiller vous contacte sous 24h pour répondre à toutes vos questions.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">✅</div>
+                <h3>Vérifier votre éligibilité</h3>
+                <p>Vérifiez votre admissibilité à un financement à 100% de votre formation.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">✅</div>
+                <h3>Obtenir un devis gratuit</h3>
+                <p>Recevez une estimation personnalisée de votre projet de formation.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">✅</div>
+                <h3>Planifier un rendez-vous</h3>
+                <p>Visitez nos centres et rencontrez nos équipes pour un entretien personnalisé.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">✅</div>
+                <h3>Être guidé(e) pas à pas</h3>
+                <p>Bénéficiez d'un accompagnement complet dans votre projet de formation.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Centers Section -->
+    <section class="section contact-centers">
+        <h2 class="section-title">📍 Venez nous rencontrer dans l'un de nos centres</h2>
+        <p class="section-subtitle">Nos équipes vous accueillent dans des centres chaleureux, accessibles et proches de chez vous :</p>
+        
+        <div class="container centers-container">
+            <div class="center-card">
+                <div class="center-title">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Centre de formation de Palaiseau (91)</h3>
+                </div>
+                <div class="center-address">
+                    <p>Adresse : 123 Avenue de l'Éducation</p>
+                    <p>91120 Palaiseau</p>
+                </div>
+                <a href="centres.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+            
+            <div class="center-card">
+                <div class="center-title">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Centre de formation de Noisy-le-Sec (93)</h3>
+                </div>
+                <div class="center-address">
+                    <p>Adresse : 45 Rue de la Conduite</p>
+                    <p>93130 Noisy-le-Sec</p>
+                </div>
+                <a href="centres.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+            
+            <div class="center-card">
+                <div class="center-title">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Centre de formation de Meaux (77)</h3>
+                </div>
+                <div class="center-address">
+                    <p>Adresse : 8 Boulevard de l'Apprentissage</p>
+                    <p>77100 Meaux</p>
+                </div>
+                <a href="centres.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="text-center" style="margin-top: var(--spacing-xl);">
+            <a href="contact.html" class="btn btn-secondary btn-lg">Je souhaite planifier une visite</a>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">🔄 Réorientation, reconversion, projet d'avenir ?</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Ne laissez pas vos questions sans réponse. Un simple message peut transformer votre avenir professionnel.</p>
+            <p style="margin-bottom: var(--spacing-lg); font-size: var(--font-size-lg); color: var(--accent); text-align: center ;" >🎯 Formez-vous à un métier porteur, humain et recherché partout en France.</p>
+            
+            <div class="contact-info" style="justify-content: center; margin-bottom: var(--spacing-lg);">
+                <div style="margin: 0 var(--spacing-md); font-size: var(--font-size-lg);">
+                    <i class="fas fa-phone"></i> 01 69 09 27 27
+                </div>
+                <div style="margin: 0 var(--spacing-md); font-size: var(--font-size-lg);">
+                    <i class="fas fa-envelope"></i> contact@educaser.fr
+                </div>
+            </div>
+            <div class="panel-btn">
+
+            
+            <a href="contact.html#devis" class="btn btn-primary btn-lg">Remplir le formulaire de contact</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer id="footer"></footer>
+
+    <script>
+ // Form tabs functionality
+        const formTabs = document.querySelectorAll('.form-tab');
+        
+        formTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                formTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all form panels
+                document.querySelectorAll('.form-panel').forEach(panel => {
+                    panel.classList.remove('active');
+                });
+                
+                // Show the corresponding form panel
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-panel`).classList.add('active');
+            });
+        });
+
+
+        
+
+            </script>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

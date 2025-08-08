@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educaser - Nos centres</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+ /* Hero Section */
+        .centres-hero {
+           background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 61, 126, 0.9) 100%);
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .centres-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+        
+        .centres-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .centres-hero-title {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .centres-hero-subtitle {
+            font-size: var(--font-size-md);
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Overview Section */
+        .centres-overview {
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .overview-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .centres-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-md);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+        }
+        
+        .centres-table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--spacing-md);
+            text-align: left;
+        }
+        
+        .centres-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .centres-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .centres-table tr:nth-child(even) {
+            background-color: rgba(152, 210, 192, 0.1);
+        }
+        
+        .centres-table tr:hover {
+            background-color: rgba(152, 210, 192, 0.2);
+        }
+        
+        /* Environment Section */
+        .centres-environment {
+            background-color: var(--accent);
+         
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .environment-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            max-width: 1200px;
+            margin: 50px auto;
+            
+        
+        }
+        
+        .environment-image {
+         
+        
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .environment-image img {
+            border-radius: var(--border-radius-lg);
+        }
+        
+ 
+        .environment-features {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+        
+        .environment-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+        
+        .environment-feature i {
+            color: var(--primary);
+            font-size: var(--font-size-lg);
+            margin-top: 5px;
+        }
+        
+        /* Detailed Centres Section */
+        .centres-detailed {
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .centres-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        
+        .centre-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-lg);
+            background: var(--glass);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .centre-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .centre-card.palaiseau {
+            border-left: 5px solid #4F959D;
+        }
+        
+        .centre-card.noisy {
+            border-left: 5px solid #98D2C0;
+        }
+        
+        .centre-card.meaux {
+            border-left: 5px solid #F6B26B;
+        }
+        
+        .centre-image {
+            height: 300px;
+            background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .centre-image i {
+            font-size: 5rem;
+            color: var(--gray);
+        }
+        
+        .centre-content {
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .centre-tag {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .palaiseau-tag {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .noisy-tag {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .meaux-tag {
+            background: #F6B26B;
+            color: var(--dark);
+        }
+        
+        .centre-features {
+            margin-top: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .centre-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .centre-feature i {
+            color: var(--primary);
+        }
+        
+        /* Testimonials Section */
+        .centres-testimonials {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            position: relative;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        
+        .testimonial-card {
+            background: var(--glass);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 5rem;
+            color: var(--accent);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: bold;
+        }
+        
+        /* Visit Section */
+        .centres-visit {
+            background-color: var(--accent);
+            position: relative;
+        }
+        
+        .visit-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .visit-content {
+            background: var(--glass);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visit-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.5s ease;
+        }
+        
+        .visit-content:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+        
+        /* Final CTA Section */
+        .centres-cta {
+            background: linear-gradient(135deg, var(--secondary) 0%, #86bdaa 100%);
+            color: var(--dark);
+            position: relative;
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .cta-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .cta-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .cta-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-xl);
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius-lg);
+            max-width: 350px;
+            transition: var(--transition);
+        }
+        
+        .cta-feature:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .cta-icon {
+            font-size: var(--font-size-lg);
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            :root {
+                --font-size-xxl: 3rem;
+                --font-size-xl: 2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .environment-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            .environment-image {
+                order: -1;
+              
+            }
+            
+            .centre-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .centre-image {
+                height: 200px;
+            }
+
+              .environment-image img {
+
+                width: 100%;
+                height: auto;
+               }
+        
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --font-size-xxl: 2.5rem;
+                --font-size-xl: 1.75rem;
+                --spacing-xxl: 4rem;
+            }
+            
+            .centres-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+               .environment-image img {
+
+                width: 100%;
+                height: auto;
+               }
+        }
+        
+        @media (max-width: 576px) {
+            :root {
+                --font-size-xxl: 2rem;
+                --font-size-xl: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <header id="header"></header>
+
+    <div class="overlay" id="overlay"></div>
+
+
+  
+
+
+
+
+    <!-- Hero Section -->
+    <section class="centres-hero">
+        <div class="container centres-hero-content">
+            <h1 class="centres-hero-title">Nos centres de formation</h1>
+            <p class="centres-hero-subtitle">Des centres proches de vous, conçus pour votre réussite</p>
+            <p>Chez ÉDUCASER, nous croyons qu'un bon environnement de formation fait toute la différence. C'est pourquoi nous vous accueillons dans trois centres modernes, accessibles et adaptés, situés en Île-de-France, à proximité des transports et dans des villes dynamiques.</p>
+        </div>
+    </section>
+    
+    <!-- Overview Section -->
+    <section class="section centres-overview">
+        <h2 class="section-title">Nos centres en un coup d'œil</h2>
+        
+        <div class="container overview-container">
+            <table class="centres-table">
+                <thead>
+                    <tr>
+                        <th>Ville</th>
+                        <th>Adresse / Secteur approximatif</th>
+                        <th>Accessibilité</th>
+                        <th>Formations proposées</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Palaiseau (91)</strong></td>
+                        <td>Proche RER B / N20</td>
+                        <td>Accès RER, bus, voiture</td>
+                        <td>Moniteur auto-école / Secrétaire</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Noisy-le-Sec (93)</strong></td>
+                        <td>Proche RER E / Tram T1</td>
+                        <td>RER, tramway, bus</td>
+                        <td>Moniteur auto-école / Secrétaire</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Meaux (77)</strong></td>
+                        <td>Proche Gare SNCF de Meaux</td>
+                        <td>Train, bus, stationnement facile</td>
+                        <td>Moniteur auto-école / Secrétaire</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="text-center">
+               
+                <a href="contact.html#devis" class="btn btn-secondary">Demander les dates de rentrée</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Environment Section -->
+    <section class="section centres-environment">
+        <h2 class="section-title">Un environnement pensé pour vous</h2>
+        
+        <div class="container environment-container">
+            <div class="environment-image">
+                <img src="media/salle de formation.jpg" alt="">
+            </div>
+            <div class="environment-features">
+                <p>Chaque centre ÉDUCASER vous offre :</p>
+                
+                <div class="environment-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Des salles de cours équipées, lumineuses et conviviales</span>
+                </div>
+                
+                <div class="environment-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Des simulateurs de conduite récents pour les sessions pratiques</span>
+                </div>
+                
+                <div class="environment-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Des espaces d'échanges et de repos</span>
+                </div>
+                
+                <div class="environment-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Une équipe pédagogique disponible et à l'écoute</span>
+                </div>
+                
+                <div class="environment-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Une ambiance propice à l'apprentissage et à la réussite</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detailed Centres Section -->
+    <section class="section centres-detailed">
+        <h2 class="section-title">Détail de nos implantations</h2>
+        
+        <div class="container centres-container">
+            <!-- Palaiseau -->
+            <div class="centre-card palaiseau glass-card">
+              
+                <div class="centre-content">
+                    <span class="centre-tag palaiseau-tag" style="text-align: c;">🔵 Centre de Palaiseau (91)</span>
+                    <p>Idéalement situé à proximité du RER B, notre centre de Palaiseau vous accueille dans un cadre calme, moderne et professionnel.</p>
+                    
+                    <div class="centre-features">
+                        <div class="centre-feature">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formation Moniteur Auto-École & Secrétaire Auto-École</span>
+                        </div>
+                        <div class="centre-feature">
+                            <i class="fas fa-car"></i>
+                            <span>Grand parking à proximité – Transports en commun accessibles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Noisy-le-Sec -->
+            <div class="centre-card noisy glass-card">
+                
+                <div class="centre-content">
+                    <span class="centre-tag noisy-tag">🟢 Centre de Noisy-le-Sec (93)</span>
+                    <p>En plein cœur de la Seine-Saint-Denis, à 10 min de Paris en RER E, notre centre de Noisy-le-Sec est très facilement accessible.</p>
+                    
+                    <div class="centre-features">
+                        <div class="centre-feature">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formation Moniteur Auto-École & Secrétaire Auto-École</span>
+                        </div>
+                        <div class="centre-feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>À deux pas du tram T1 et des lignes de bus</span>
+                        </div>
+                        <div class="centre-feature">
+                            <i class="fas fa-comments"></i>
+                            <span>Quartier animé avec toutes les commodités</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Meaux -->
+            <div class="centre-card meaux glass-card">
+              
+                <div class="centre-content">
+                    <span class="centre-tag meaux-tag">🟠 Centre de Meaux (77)</span>
+                    <p>Notre centre de Meaux vous offre un environnement spacieux, calme et adapté à la concentration, à quelques minutes de la gare SNCF.</p>
+                    
+                    <div class="centre-features">
+                        <div class="centre-feature">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formation Moniteur Auto-École & Secrétaire Auto-École</span>
+                        </div>
+                        <div class="centre-feature">
+                            <i class="fas fa-train"></i>
+                            <span>Accès rapide depuis l'Est parisien</span>
+                        </div>
+                        <div class="centre-feature">
+                            <i class="fas fa-parking"></i>
+                            <span>Stationnement facile pour les apprenants véhiculés</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section centres-testimonials">
+        <h2 class="section-title" style="color: #f0f0f0;">Ce que disent nos stagiaires</h2>
+        
+        <div class="container testimonials-container">
+            <div class="testimonial-card glass-card">
+                <p>"Centre très bien situé et facile d'accès. Équipe super accueillante."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">N</div>
+                    <div class="author-info">
+                        <span class="author-name">Nassim</span>
+                        <span>Formé à Meaux</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card glass-card">
+                <p>"J'ai choisi le centre de Noisy pour sa proximité avec mon domicile, et je ne regrette pas ! Les formateurs sont disponibles et motivants."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">L</div>
+                    <div class="author-info">
+                        <span class="author-name">Laura</span>
+                        <span>Diplômée à Noisy-le-Sec</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visit Section -->
+    <section class="section centres-visit">
+        <div class="container visit-container">
+            <h2 class="section-title">📞 Vous souhaitez visiter un de nos centres ?</h2>
+            <div class="visit-content glass-card">
+                <p>Rien ne vaut une visite pour se projeter ! Prenez rendez-vous avec notre équipe pour découvrir nos locaux, rencontrer les formateurs, et poser toutes vos questions.</p>
+                <p><i class="fas fa-calendar-check"></i> Visites possibles du lundi au vendredi sur rendez-vous</p>
+                <div class="contact-info" style="justify-content: center; margin: var(--spacing-md) 0;">
+                    <div style="margin: 0 var(--spacing-md);">
+                        <i class="fas fa-phone"></i> 01 69 09 27 27
+                    </div>
+                    <div style="margin: 0 var(--spacing-md);">
+                        <i class="fas fa-envelope"></i> contact@educaser.fr
+                    </div>
+                </div>
+                <a href="contact.html#devis" class="btn btn-secondary">Prendre rendez-vous pour une visite</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="section centres-cta">
+        <h2 class="section-title">Proche de vous. Présents pour vous.</h2>
+        <p class="section-subtitle" style="color: #f0f0f0;">Nos centres ont été pensés pour vous offrir le meilleur confort de formation, mais surtout la meilleure préparation à votre nouvelle carrière.</p>
+        
+        <div class="container cta-container">
+            <div class="cta-features">
+                <div class="cta-feature">
+                    <div class="cta-icon">
+                        <i class="fas fa-lock-open"></i>
+                    </div>
+                    <h3>Accessibles</h3>
+                </div>
+                
+                <div class="cta-feature">
+                    <div class="cta-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Encadrés par des professionnels</h3>
+                </div>
+                
+                <div class="cta-feature">
+                    <div class="cta-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Orientés réussite et insertion</h3>
+                </div>
+            </div>
+            
+            <div class="cta-buttons" style="display: flex; justify-content: center; gap: var(--spacing-md); flex-wrap: wrap;">
+                <a href="contact.html#devis" class="btn btn-secondary btn-lg">M'inscrire dans un centre</a>
+                <a href="contact.html#devis" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <footer id="footer"></footer>
+
+    <script>
+
+
+
+
+    </script>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
